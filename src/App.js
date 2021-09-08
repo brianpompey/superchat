@@ -1,5 +1,5 @@
 import './App.css';
-import firebase from 'firebase/app';
+import firebase, { FirebaseError } from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
 
@@ -38,9 +38,13 @@ function App() {
 }
 
 function SignIn() {
+  const signInWithGoogle = () => {
+    const provider = new firebase.auth.GoogleAuthProvider();
+    auth.signInWithPopup(provider);
+  }
 
   return (
-    <button onClick={}>Sign In with Google</button>
+    <button onClick={signInWithGoogle}>Sign In with Google</button>
   )
 }
 
