@@ -49,6 +49,10 @@ function SignIn() {
 }
 
 function SignOut() {
+  return auth.currentUser && (
+
+    <button>Sign Out</button>
+  )
 
 }
 
